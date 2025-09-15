@@ -1,5 +1,4 @@
 /* Estilos básicos para layout e cores relacionados à fazenda */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0; padding: 0;
@@ -13,6 +12,24 @@ body {
     padding: 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    margin: 0;
+}
+
+.nav-menu {
+    display: none; /* Oculto para celular, pode modificar para mais controles */
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
 }
 
 .sidebar {
@@ -23,6 +40,7 @@ body {
     top: 60px;
     bottom: 0;
     overflow-y: auto;
+    transition: transform 0.3s ease;
 }
 
 .sidebar-nav {
@@ -57,3 +75,99 @@ body {
     display: block;
 }
 
+/* Formulários e listas */
+
+.form-module {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.form-module label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    margin-right: 10px;
+    min-width: 150px;
+}
+
+.form-module input,
+.form-module select {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-module button {
+    padding: 8px 18px;
+    background-color: #2a9d8f;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.form-module button:hover {
+    background-color: #21867a;
+}
+
+.list-module {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-module li {
+    background-color: white;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-left: 5px solid #2a9d8f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-module button {
+    background-color: #e63946;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.list-module button:hover {
+    background-color: #b22234;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        height: calc(100vh - 60px);
+        width: 220px;
+        background-color: #264653;
+        transform: translateX(-100%);
+        z-index: 1000;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
