@@ -32,3 +32,25 @@ document.querySelectorAll('.nav-item').forEach(item => {
 // Inicializações e funções para alimentar interface etc. devem ser implementadas aqui
 
 
+// Armazena os dados localmente
+let rebanhoArr = [];
+
+document.getElementById('formRebanho').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nome = this.nome.value;
+    const idade = this.idade.value;
+    const raca = this.raca.value;
+    rebanhoArr.push({ nome, idade, raca });
+    atualizarListaRebanho();
+    this.reset();
+});
+
+function atualizarListaRebanho() {
+    const lista = document.getElementById('listaRebanho');
+    lista.innerHTML = "";
+    rebanhoArr.forEach(animal => {
+        const li = document.createElement('li');
+        li.textContent = `Nome: ${animal.nome}, Idade: ${animal.idade}, Raça: ${animal.raca}`;
+        lista.appendChild(li);
+    });
+}
