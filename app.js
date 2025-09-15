@@ -1,59 +1,34 @@
-/* Estilos básicos para layout e cores relacionados à fazenda */
+// Dados iniciais para Fazenda Macuco
+let sistemaFazenda = {
+    propriedade: {
+        nome: "Fazenda Macuco",
+        proprietario: "João Silva",
+        endereco: "Zona Rural, Município ABC",
+        area_total: 120,
+        atividade_principal: "Produção de Leite"
+    },
+    rebanho: [],
+    reproducao: [],
+    producao_leite: [],
+    compras: [], // Rações, suplementos e medicamentos
+    financeiro: {
+        receitas: [],
+        despesas: [],
+        saldo_atual: 0
+    }
+};
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0; padding: 0;
-    background-color: #f9f9f9;
-    color: #264653;
-}
+// Função para navegar entre módulos
+document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', function() {
+        document.querySelectorAll('.module').forEach(mod => mod.classList.remove('active'));
+        document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+        let mod = document.getElementById(this.dataset.module);
+        if(mod) mod.classList.add('active');
+        this.classList.add('active');
+    });
+});
 
-.header {
-    background-color: #2a9d8f;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-}
+// Inicializações e funções para alimentar interface etc. devem ser implementadas aqui
 
-.sidebar {
-    width: 220px;
-    background-color: #264653;
-    color: white;
-    position: fixed;
-    top: 60px;
-    bottom: 0;
-    overflow-y: auto;
-}
-
-.sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 0;
-}
-
-.nav-item {
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.nav-item:hover,
-.nav-item.active {
-    background-color: #2a9d8f;
-}
-
-.main-content {
-    margin-left: 220px;
-    padding: 20px;
-    min-height: calc(100vh - 60px);
-}
-
-.module {
-    display: none;
-}
-
-.module.active {
-    display: block;
-}
 
