@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fazenda Macuco - Sistema de Gestão</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <h2>🐄 Fazenda Macuco</h2>
+            </div>
+            <nav class="nav-menu">
+                <span class="user-info">João Silva - Proprietário</span>
+            </nav>
+        </div>
+    </header>
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-item active" data-module="dashboard">📊 Dashboard</a>
+            <a href="#rebanho" class="nav-item" data-module="rebanho">🐮 Rebanho</a>
+            <a href="#reproducao" class="nav-item" data-module="reproducao">🍼 Reprodução</a>
+            <a href="#producao-leite" class="nav-item" data-module="producao-leite">🥛 Produção de Leite</a>
+            <a href="#compras" class="nav-item" data-module="compras">🛒 Compras</a>
+            <a href="#financeiro" class="nav-item" data-module="financeiro">📈 Financeiro</a>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <section id="dashboard" class="module active">
+            <!-- Conteúdo do dashboard -->
+            <h1>Dashboard - Fazenda Macuco</h1>
+            <!-- Implementar indicadores e gráficos -->
+        </section>
+        <section id="rebanho" class="module">
+            <h1>Rebanho</h1>
+            <!-- Lista e formulário de cadastro de animais -->
+        </section>
+        <section id="reproducao" class="module">
+            <h1>Reprodução</h1>
+            <!-- Controle reprodutivo com eventos e previsões -->
+        </section>
+        <section id="producao-leite" class="module">
+            <h1>Produção de Leite</h1>
+            <!-- Registro da produção diária -->
+        </section>
+        <section id="compras" class="module">
+            <h1>Compras</h1>
+            <!-- Controle de compras de ração, suplementos e medicamentos com validade e alertas -->
+        </section>
+        <section id="financeiro" class="module">
+            <h1>Financeiro</h1>
+            <!-- Controle financeiro rural -->
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
+
